@@ -5,3 +5,4 @@ Pillow
 passlib
 Flask-SQLAlchemy
 gunicorn
+mysqlclient
