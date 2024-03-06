@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename="style.css")}}">
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="icon" href="{{url_for('static',filename='images/travel.png')}}" type="image/x-icon">
+    <title>Home | Travel Companion</title>
+</head>
+
+<body>
+    <div id="wrapper"> <!--It Conatins all the Parts of the Website-->
+        <div class="container">
+            <div class="navbar">
+                <div class="logo-container" onclick="homeNavigator()" style="cursor: pointer" >
+                    <img src="{{url_for('static',filename='images/logo1.png.png')}}" alt="" class="logo" width="110">
+                    <div class="logo-text">ravel Companion</div>
+                </div>
+                <div class="nav-items">
+                    <div class="nav-components"><a href="#projects">Explore Site</a></div>
+                    <div class="nav-components"><a href="./member.html">Members</a></div>
+                    <div class="nav-components"><a href="#contactme">Message Us</a></div>
+                    <div class="nav-components"><a href="#" onclick="getLocation()"><img src="{{url_for('static',filename='images/share location.svg')}}"></img></a></div>
+                </div>
+            </div>
+
+
+
+            <div class="hero-section">
+                <div class="faded-text">Travel Companion</div>
+                <div class="hero-left">
+                    <div class="hero-heading hero-head" id="usernameDisplay">Hi {{session.username}} !</div>
+                    <div class="hero-sub-heading hero-heading">
+                        I am a <span class="role"></span>
+                    </div>
+                    <div class="hero-description">Welcome to your Ultimate Travel Companion. 
+                        Enhance your experience using our Chat Bot...
+                    </div>
+
+                    <!-- <button class="btn btn-flex">Hire Me</button> -->
+                    <button class="btn btn-flex" onclick="openStreamlitApp()">Recommender</button>
+
+                </div>
+
+                <div class="hero-right">
+                    <div class=" absolute icons icon-dots">
+                        <img src="{{url_for('static',filename='images/dots.png')}}" alt="" width=84>
+                    </div>
+                    <div class=" absolute icons icon-cube">
+                        <img src="{{url_for('static',filename='images/cube.png')}}" alt="" width="29">
+                    </div>
+                    <div class=" absolute icons icon-circle">
+                        <img src="{{url_for('static',filename='images/circle.png')}}" alt="" width="18">
+                    </div>
+                    <div class=" absolute icons icon-zigzag">
+                        <img src="{{url_for('static',filename='images/zigzags.png')}}" alt="" width="30">
+                    </div>
+                    <div class=" absolute icons icon-plus">
+                        <img src="{{url_for('static',filename='images/plus.png')}}" alt="" width="23">
+                    </div>
+                    <div class="user-image">
+                        <img src="{{url_for('static',filename='images/image.jpeg')}}" alt="" width="240">
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+        <div id="projects" class="project-section">
+
+            <h2 class="page-header">Visit Us</h2>
+
+            <div class="project-container">
+                <div class="project-card" id="project1">
+                    <!-- <div class="project-number">01</div> -->
+                    <div class="project-content project-content-left">
+
+                        <div class="project-skills">
+                            <img class="project-skill" src="/images/HTML.png" alt="">
+                            <img class="project-skill" src="/images/CSS.png" alt="">
+                            <img class="project-skill" src="/images/Javascript.svg" alt="">
+                            <img class="project-skill" src="/images/Express.png" alt="">
+                            <img class="project-skill" src="/images/NextJsCircle.png" alt="">
+                            <img class="project-skill" src="/images/Tailwind.png" alt="">
+                            <img class="project-skill" src="/images/NodeJs.svg" alt="">
+                            <img class="project-skill" src="/images/MongoDB.svg" alt="">
+                            <img class="project-skill" src="/images/Redux.svg" alt="">
+                            <img class="project-skill" src="/images/Vercel.svg" alt="">
+                        </div>
+                        <h2 class="project-heading">Taj Mahal</h2>
+                        <p class="project-subheading">Its is a car modification copany which provide you sheets to
+                            protect your car from scratch</p>
+                        <div class="btn-group">
+                            <button class="btn btn-select">Voice Bot</button>
+                            <a href="">
+                                <i title="GithubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a href="">
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" id="project2">
+                    <div class="project-content project-content-right">
+
+                        <div class="project-skills">
+                            <img class="project-skill" src="{{url_for('static',filename='images/HTML.png')}}" alt="">
+                            <img class="project-skill" src="{{url_for('static',filename='images/CSS.png')}}" alt="">
+                            <img class="project-skill" src="{{url_for('static',filename='/images/Javascript.svg')}}" alt="">
+                            <img class="project-skill" src="{{url_for('static',filename='/images/Express.png')}}"alt="">
+                            <img class="project-skill" src="{{url_for('static',filename='/images/Tailwind.png')}}" alt="">
+                            <img class="project-skill" src="{{url_for('static',filename='/images/MongoDB.svg')}}" alt="">
+                            <img class="project-skill" src="{{url_for('static',filename='/images/Redux.svg')}}" alt="">
+                            <img class="project-skill" src="{{url_for('static',filename='/images/Vercel.svg')}}" alt="">
+                        </div>
+                        <h2 class="project-heading">Red Fort</h2>
+                        <p class="project-subheading">Its is a car modification copany which provide you sheets to
+                            protect your car from scratch</p>
+                        <div class="btn-group">
+                            <button class="btn btn-select">Voice Bot</button>
+                            <a href="">
+                                <i title="GithubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a href="">
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" id="project3">
+                    <div class="project-content project-content-left">
+
+                        <div class="project-skills">
+                            <img class="project-skill" src="/images/HTML.png" alt="">
+                            <img class="project-skill" src="/images/CSS.png" alt="">
+                            <img class="project-skill" src="/images/Javascript.svg" alt="">
+                            <img class="project-skill" src="/images/Express.png" alt="">
+                            <img class="project-skill" src="/images/NextJsCircle.png" alt="">
+                            <img class="project-skill" src="/images/Tailwind.png" alt="">
+                            <img class="project-skill" src="/images/NodeJs.svg" alt="">
+                            <img class="project-skill" src="/images/MongoDB.svg" alt="">
+                            <img class="project-skill" src="/images/Redux.svg" alt="">
+                            <img class="project-skill" src="/images/Vercel.svg" alt="">
+                        </div>
+                        <h2 class="project-heading">Statue of Liberty</h2>
+                        <p class="project-subheading">Its is a car modification copany which provide you sheets to
+                            protect your car from scratch</p>
+                        <div class="btn-group">
+                            <button class="btn btn-select">Voice Bot</button>
+                            <a href="">
+                                <i title="GithubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a href="">
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" id="project4">
+                    <div class="project-content project-content-right">
+
+                        <div class="project-skills">
+                            <img class="project-skill" src="/images/HTML.png" alt="">
+                            <img class="project-skill" src="/images/CSS.png" alt="">
+                            <img class="project-skill" src="/images/Javascript.svg" alt="">
+                            <img class="project-skill" src="/images/Express.png" alt="">
+                            <img class="project-skill" src="/images/NextJsCircle.png" alt="">
+                            <img class="project-skill" src="/images/Tailwind.png" alt="">
+                            <img class="project-skill" src="/images/NodeJs.svg" alt="">
+                            <img class="project-skill" src="/images/MongoDB.svg" alt="">
+                            <img class="project-skill" src="/images/Redux.svg" alt="">
+                            <img class="project-skill" src="/images/Vercel.svg" alt="">
+                        </div>
+                        <h2 class="project-heading">Eiffle tower</h2>
+                        <p class="project-subheading">Its is a car modification copany which provide you sheets to
+                            protect your car from scratch</p>
+                        <div class="btn-group">
+                            <button class="btn btn-select">Voice Bot</button>
+                            <a href="">
+                                <i title="GithubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a href="">
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div  class="skill-container ">
+            <div class="skill-faded-text" >Skills</div>
+            <div class="skill-left">
+                <h2 class="skill-heading">
+                    <span class="caps" id="skills2" >M</span>e and
+                    <br />
+                    Mytech Stack
+                </h2>
+                <div class="skill-subheading">
+                    <p>Hi {{session.username}}. I'm passionate about traveling and exploring new places!</p>
+<p>Whether it's experiencing the breathtaking landscapes, immersing myself in different cultures, or trying local cuisines, traveling has always been an exciting adventure for me.</p>
+<p>Join me on my journeys as I share stories about my adventures, travel tips, and recommendations for amazing destinations. Let's wander together and create unforgettable memories!</p>
+
+                </div>
+            </div>
+            <div class="skill-right">
+                <img src="{{url_for('static',filename='images/blob vector.png')}}" alt="" class="blob-style">
+
+                <img src="{{url_for('static',filename='images/taj.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/redfort.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/somanth.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/dwarka.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/unity.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/goldentemple.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/hawamahal.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/indiagate.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/bhurj.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/qutubminar.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/lotustemple.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/rammandir.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/liberty.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/akshardham.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/giza.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/china.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/petra.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/pedeemer.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/pichu.png')}}" alt="" class="skills-logo">
+                <img src="{{url_for('static',filename='images/itza.png')}}" alt="" class="skills-logo">
+               
+            </div>
+        </div>
+        <div class="contactus-form" id="contactme">
+            <div class="">
+    
+                <h1 class="contactus-heading">Contact Us</h1>
+                <h3 class="contactus-subheading">Questions, Thoughts, Or Just Want To Say Hello?</h3>
+                <div class="contactus-form-container">
+                    <form action="https://formsubmit.co/ebf00e25be84071f5a1cafb5043fbf1e" method="POST">
+                        <div class="formfield-container">
+                            <input class="formfield" type="text" name="name" id="" placeholder="Enter your name">
+                            <input class="formfield" type="email" name="email" id="" placeholder="Enter your email address">
+                            <input class="formfield" type="text" name="subject" id="" placeholder="Enter your subject">
+                            <textarea class="formfield formfield-textarea" name="message" id="" cols="30" rows="10" placeholder="Enter your message"></textarea>
+                        </div>
+                        <div class="button-set">
+                            <button class="btn" id="submit-btn">Send Message
+                                <i class="submit-icon fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    
+                </div>
+               
+            </div>
+        </div>
+
+
+        <footer class="footer-section">
+            <div class="footer-list">
+                <a href="#projects" ><li>Visit Us</li></a>
+                <a href="./member.html"><li>Member</li></a>
+                <a href="#contactme"><li>Contact Me</li></a>
+            </div>
+            <div class="footer-icon">
+                <a href=""><i class="fa-brands fa-linkedin my-icon"></i></a>
+                <a href=""><i class="fa-brands fa-github my-icon"></i></a>
+                <a href=""><i class="fa-brands fa-twitter my-icon"></i></a>
+                <a href=""><i class="fa-brands fa-instagram my-icon"></i></a>
+                <a href=""><i class="fa-brands fa-whatsapp my-icon"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    
+
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://kit.fontawesome.com/58a810656e.js"></script>
+    <script>
+
+        function getLocation() {
+            const x = document.getElementById("demo");
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition);
+            } else { 
+              x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+          
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude + 
+            "<br>Longitude: " + position.coords.longitude;
+        }
+
+        function homeNavigator(){
+           window.location.href="./index.html"
+        }
+        var typeData = new Typed(".role", {
+            strings: [
+                "Travel Assistant",
+                "Tour Companion",
+                "Tour Planner",
+                "Plus One",
+                "Fellow Traveler",
+            ],
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 80,
+            backDelay: 1000,
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the username from the URL
+            console.log(2)
+            console.log('Full URL:', window.location.href);
+            console.log('Search attribute:', window.location.search);
+            var params = new URLSearchParams(window.location.search);
+            var username = params.get('username');
+            console.log(3)
+            console.log(username)
+            // Check if the username is present
+            if (username) {
+                // Display the username on the page
+                console.log(4)
+                document.getElementById('usernameDisplay').innerText = 'Welcome, ' + decodeURIComponent(username) + '!';
+                console.log(username)
+            }
+        });    
+
+    
+        function openStreamlitApp() {
+            // Replace the URL with the actual URL of your Streamlit app
+            var streamlitAppURL = 'http://localhost:8501/';
+            
+            // Open the Streamlit app in a new tab or window
+            window.open(streamlitAppURL, '_blank');
+        }
+            
+    </script>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/f2d5c164-f777-47ed-923f-d8dd4d7abf9b/webchat/config.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Title Bar Icon  -->
+    <link rel="icon" href="{{url_for('static',filename='images/travel.png')}}" type="image/x-icon">
+    <title>Travel Companion</title>
+ 
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename="css/style.css")}}" />
+
+    <!-- fonts style -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static',filename="css/style.css")}}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    
+    #wrapper{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    .username{
+      height: 30px;
+      width: 200px;
+    }
+    .pink-btn{
+        background-color: #e84949;
+        color: white;
+        padding: 1% 2%;
+        margin-top:20px;
+        font-size: 18px;
+        box-shadow: 5px 5px 7px 0px #0000003f;
+        position: relative;
+        z-index: 1;
+        border: 2px solid #e84949;
+        /* border-color: #e84949; */
+    }
+    
+    .pink-btn::before{
+        content: "";
+        background-color: white;
+        position: absolute;
+        top: -0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: all 1s;
+        z-index: -1;
+    }
+    .pink-btn:hover{
+        color: black;
+    }
+    .pink-btn:hover::before{
+        
+        transform: scaleX(1);
+        
+        
+    }
+    </style>
+  </head>
+
+  <body>
+    <div class="hero_area">
+      <!-- header section strats -->
+      <!-- Remove the entire header section, including the navbar -->
+      <!-- end header section -->
+      <!-- slider section -->
+      <section class="slider_section position-relative">
+        <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <div class="detail-box">
+                      <div>
+                        <h2>welcome to</h2>
+                        <h1>Travel Companion</h1>
+                        <p>
+                          Your virtual guide to a world of wonders! Explore with
+                          T-BOT – an intelligent companion providing instant
+                          insights on iconic places. Enjoy personalized
+                          narratives, rich history, and hidden gems. Elevate
+                          your travel experience today!
+                        </p>
+                        <div class="">
+                          <!--<label for="username">Enter your name:</label>
+                          <input type="text" id="username" required>
+                          <a href="/index.html" onclick="func()" id="recog" type="submit"> Get Started </a> -->
+                          <form action="/signup-in.html" method="GET">
+                            <label for="username">Enter your name :</label>
+                            <input type="text" class="username" id="username" name="username" required><br>
+                            <!--<button type="submit">Go to Index Page</button>-->
+                           <!-- <button href="/index.html" onclick="func()" id="recog" type="submit"> Get Started </button>-->
+                           <!-- <div id="wrapper">-->
+                              <button id="recog" type="submit" class="pink-btn">Get Started</button>
+                          </div>
+                          </form>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </section>
+      <!-- end slider section -->
+    </div>
+    <script>
+      function func(){
+        console.log("Open")
+        var a = document.getElementById('recog')
+        console.log("Compiling")
+        if (username != null){
+          a.innerHTML='Face Recognizing...'
+        console.log("Complete")
+
+        var username = document.getElementById('username').value;
+        console.log("1")
+
+            // Redirect to index.html with the username as a query parameter
+            window.location.href = 'index.html?username=' + encodeURIComponent(username);
+            console.log(username)
+        } 
+        
+      }
+    </script>
+
+  </body>
+</html>
